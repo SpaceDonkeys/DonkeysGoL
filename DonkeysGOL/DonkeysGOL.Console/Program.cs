@@ -13,8 +13,10 @@ namespace DonkeysGOL.Console
 
         static void Main(string[] args)
         {
-
-
+            Game game = new Game();
+            game.Run();
+            View.CrudeRenderer.RenderSpace(game.Space);
+            System.Console.ReadKey();
         }
 
 

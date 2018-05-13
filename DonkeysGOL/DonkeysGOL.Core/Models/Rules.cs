@@ -6,12 +6,37 @@ using System.Threading.Tasks;
 
 namespace DonkeysGOL.Core.Models
 {
-   static class Rules
+   /// <summary>
+   /// static class holding all rules
+   /// rules are kept as separate function for cleaner code and extensibility
+   /// </summary>
+   public static class Rules
     {
-        static void Overpopulation(ref Space space)
+            
+        static public bool Overpopulation(ref Space space, int x, int y)
         {
-            throw new NotImplementedException();
+            if (space.CountAliveNeighborhood(x, y) > 3)
+            {
+                return false;
+            }
+            return true;
         }
 
+        static public bool Reproduction(ref Space space, int x, int y)
+        {
+            if (space.CountAliveNeighborhood(x,y) == 3)
+            {
+                return true;
+            }
+            return false;
+        }
+        static public bool UnderPopulation(ref Space space, int x, int y)
+        {
+            if(space.CountAliveNeighborhood(x,y)==1)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
