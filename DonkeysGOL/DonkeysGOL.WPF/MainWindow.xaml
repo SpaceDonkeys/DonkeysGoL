@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DonkeysGOL.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
+   
+    
+    
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
         
-    </Grid>
+        <Canvas Margin="10" Grid.Column="0">
+            
+        </Canvas>
+
+        <StackPanel Margin="8" Grid.Column="1">
+            <Button Margin="0 35 0 0" x:Name="RestartButton" Width="80" Height="35" Content="Restart" Click="RestartButton_Click" />
+            <TextBlock Margin="0 60 0 0" Text="Number of ticks: "/>
+            <TextBox Margin="0 5" x:Name="NumberOfTicksTextBox"/>
+
+            <Button Margin="0 10 0 0" x:Name="RunButton" Content="Run" />
+        </StackPanel>
+        
+    </Grid>    
+    
 </Window>

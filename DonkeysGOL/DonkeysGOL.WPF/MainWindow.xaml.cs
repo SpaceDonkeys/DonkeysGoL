@@ -24,5 +24,21 @@ namespace DonkeysGOL.WPF
         {
             InitializeComponent();
         }
+
+
+        SeedWindow seedwindow;
+        private void RestartButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (seedwindow == null)
+            {
+                seedwindow = new SeedWindow();
+                seedwindow.Closed += (a, b) => seedwindow = null;
+                seedwindow.Show();
+            }
+            else
+            {
+                seedwindow.Show();
+            }
+        }
     }
 }
