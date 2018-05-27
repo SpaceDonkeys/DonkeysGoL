@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DonkeysGOL.Console.Tests\CrudeRendererTests.cs" />
     <Compile Include="DonkeysGOL.Console.Tests\DonkeysGOL.Console.Tests.cs" />
     <Compile Include="DonkeysGOL.Core.Tests\SpaceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
