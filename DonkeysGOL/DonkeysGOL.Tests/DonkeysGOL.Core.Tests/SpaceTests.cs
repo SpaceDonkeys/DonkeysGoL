@@ -1,6 +1,5 @@
 ﻿using System;
 using DonkeysGOL.Core.Models;
-using NUnit;
 using NUnit.Framework;
 
 namespace DonkeysGOL.Tests.DonkeysGOL.Core.Tests
@@ -16,6 +15,39 @@ namespace DonkeysGOL.Tests.DonkeysGOL.Core.Tests
         {
             space = new Space(100);
             setFixedValuesInSpaceArray();
+        }
+
+        [Test]
+        public void InitializationByDefaultConstructor()
+        {
+            Space temp = new Space();
+            Assert.IsNotNull(temp.SpaceArray);
+        }
+
+        [Test]
+        public void InitializationByOneParameterConstructor()
+        {
+            Space temp = new Space(50);
+            Assert.IsNotNull(temp.SpaceArray);
+        }
+
+        [Test]
+        public void InitializationByTwoParameterConstructor()
+        {
+            Space temp = new Space(50, 30);
+            Assert.IsNotNull(temp.SpaceArray);
+        }
+
+        [Test]
+        public void PassNegativeToOneParameterConstructor()
+        {
+            Assert.Throws<OverflowException>(() => new Space(-10));
+        }
+
+        [Test]
+        public void PassFirstNegativeToTwoParameterConstructor()
+        {
+            Assert.Throws<OverflowException>(() => new Space(-10, 50));
         }
 
         [Test]
